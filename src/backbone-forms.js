@@ -145,7 +145,7 @@
 
         tagName: 'fieldset',
         
-        className: 'bbf-form',
+        className: 'bbf-form well',
 
         /**
          * @param {Object}  Options
@@ -192,9 +192,7 @@
                     el.append(fieldset);
                 });
             } else {
-                var target = $('<ul>');
-                el.append(target)
-                this.renderFields(fieldsToRender, target);
+                this.renderFields(fieldsToRender, el);
             }
 
             return this;
@@ -343,9 +341,9 @@
 
     var Field = Backbone.View.extend({
 
-        tagName: 'li',
+        tagName: 'div',
 
-        className: 'bbf-field',
+        className: 'control-group bbf-field',
 
         events: {
             'click label': 'logValue'
@@ -455,8 +453,8 @@
         
         //Static
         template: helpers.createTemplate('\
-             <label for="{{id}}">{{title}}</label>\
-             <div class="bbf-editor bbf-editor{{type}}"></div>\
+             <label class="control-label" for="{{id}}">{{title}}</label>\
+             <div class="controls bbf-editor bbf-editor{{type}}"></div>\
         ')
         
     });
