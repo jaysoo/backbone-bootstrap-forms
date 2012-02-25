@@ -145,7 +145,7 @@
 
         tagName: 'fieldset',
         
-        className: 'bbf-form well',
+        className: 'bbf-form',
 
         /**
          * @param {Object}  Options
@@ -338,6 +338,9 @@
 
     });
 
+		var Well = Form.extend({
+			className: 'bbf-form well'
+		});
 
     var Field = Backbone.View.extend({
 
@@ -1089,6 +1092,7 @@
     Form.editors = editors;
     Form.validators = validators;
     Backbone.Form = Form;
+    Backbone.Well = Well;
     
     //For use in NodeJS
     if (typeof module != 'undefined') module.exports = Form
